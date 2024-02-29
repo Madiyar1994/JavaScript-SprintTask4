@@ -1,0 +1,97 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background: #fff;
+}
+
+div, p, input, header, a, form {
+	box-sizing: border-box;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+ul, li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 20px 0 40px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    background-color: rgb(37, 135, 200);
+    padding: 20px 10px;
+}
+
+.btn a{
+    color: #fff;
+    margin-right: 10px;
+}
+
+.btn a:nth-child(3n){
+    margin-right: 0px;
+}
+
+.form-control {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.registerForm {
+    padding: 20px 0 40px;
+    text-align: center;
+}
+
+.form-items {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-items p {
+    margin: 0 0 10px 0;
+    text-align: left;
+    font-size: 16px;
+}
+
+.form-items input {
+    width: 100%;
+    padding: 7px 0;
+}
+
+select {
+    width: 100%;
+    padding: 7px 7px;
+    background: #fff;
+}
+
+.form-items button {
+    width: 100px;
+    padding: 10px 0;
+    background-color: rgb(37, 135, 200);
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+}
+
+.form-items:nth-child(6n){
+    text-align: left;
+}

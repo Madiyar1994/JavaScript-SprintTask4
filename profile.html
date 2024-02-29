@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Twitter - Profile</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <h3>TWITTER</h3>
+                <div class="btn">
+                    <a href="#">Tweets</a>
+                    <a href="#" id="loggedInUsername">Login</a>
+                    <a href="login.html">Logout</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="profileForm" style="text-align: center; font-size: 20px;">
+        <div class="container">
+            <h2>Welcome, <span id="fullnameDisplay" style="font-weight: bold;"></span></h2>
+            <div class="profile-items">
+                <p>Email: <span id="emailDisplay" style="font-weight: bold;"></span></p>
+            </div>
+            <!-- <div class="profile-items">
+                <p>Password: <span id="passwordDisplay" style="font-weight: bold;"></span></p>
+            </div> -->
+            <div class="profile-items">
+                <p>Full Name: <span id="fullnameDisplayValue" style="font-weight: bold;" ></span></p>
+            </div>
+            <div class="profile-items">
+                <p>Country: <span id="countryDisplay" style="font-weight: bold;"></span></p>
+            </div>
+            <div class="profile-items">
+                <p>Birthdate: <span id="birthdateDisplay" style="font-weight: bold;"></span></p>
+            </div>
+        </div>
+    </section>
+    <script>
+        let loggedInUserJSON = sessionStorage.getItem("loggedInUser");
+        let loggedInUser = JSON.parse(loggedInUserJSON);
+
+        document.getElementById("emailDisplay").innerText = loggedInUser.email;
+        // document.getElementById("passwordDisplay").innerText = loggedInUser.password;
+        document.getElementById("fullnameDisplay").innerText = loggedInUser.fullname;
+        document.getElementById("fullnameDisplayValue").innerText = loggedInUser.fullname;
+        document.getElementById("countryDisplay").innerText = loggedInUser.country;
+        document.getElementById("birthdateDisplay").innerText = loggedInUser.birthdate;
+        document.getElementById("loggedInUsername").innerText = loggedInUser.fullname;
+    </script>
+</body>
+</html>

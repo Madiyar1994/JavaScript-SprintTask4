@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Twitter</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <h3>TWITTER</h3>
+                <div class="btn">
+                    <a href="#">Tweets</a>
+                    <a href="login.html">Login</a>
+                    <a href="index.html">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="registerForm">
+        <div class="container">
+            <form name="myForm" class="form-control">
+                <div class="form-items">
+                    <p>EMAIL:</p>
+                    <input type="email" id="email" class="form-control"></input>
+                </div>
+                <div class="form-items">
+                    <p>PASSWORD:</p>
+                    <input type="password" id="password" class="form-control"></input>
+                </div>
+                <div class="form-items">
+                    <p>FULL NAME:</p>
+                    <input type="text" id="fullname" class="form-control"></input>
+                </div>
+                <div class="form-items">
+                    <p>COUNTRY:</p>
+                    <select id="country" class="form-select">
+                        <option value="Kazahstan">
+                            Kazahstan
+                        </option>
+                        <option value="USA">
+                            USA
+                        </option>
+                        <option value="Russia">
+                            Russia
+                        </option>
+                    </select>
+                </div>
+                <div class="form-items">
+                    <p>BIRTHDATE:</p>
+                    <input type="date" id="date" class="form-control"></input>
+                </div>
+                <div class="form-items">
+                    <button type="button" onclick="register()" class="btn btn-success">REGISTER</button>
+                </div>
+            </form
+        </div>
+    </section>
+
+    <script>
+        let users = [
+        {fullname: "admin", email: "admin01", password: "12345", country:"Kazakhstan"},
+        ];
+
+        let user = {};
+
+        function register(){
+            user.email = email.value;
+            user.password = password.value;
+            user.fullname = fullname.value;
+            user.country = country.value;
+            user.birthdate = date.value;
+
+            users.push(user);
+            console.log(users);
+
+            localStorage.setItem("usersLocal", JSON.stringify(users));
+
+            alert("Succesfull!")
+
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

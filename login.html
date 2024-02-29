@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Twitter</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <h3>TWITTER</h3>
+                <div class="btn">
+                    <a href="#">Tweets</a>
+                    <a href="login.html">Login</a>
+                    <a href="index.html">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="registerForm">
+        <div class="container">
+            <form name="myForm" class="form-control">
+                <div class="form-items">
+                    <p>EMAIL:</p>
+                    <input type="email" id="email" class="form-control"></input>
+                </div>
+                <div class="form-items">
+                    <p>PASSWORD:</p>
+                    <input type="password" id="password" class="form-control"></input>
+                </div>
+                <div class="form-items" style="text-align: left;">
+                    <button type="button" onclick="sign()" class="btn btn-success">LOGIN</button>
+                </div>
+            </form
+        </div>
+    </section>
+    <script>
+        function sign() {
+            let emailVar = email.value;
+            let passwordVar = password.value;
+            let loggedInUser = null;
+
+            let userArrJSON = localStorage.getItem("usersLocal");
+            let userArrObj = JSON.parse(userArrJSON);
+
+            for (let i = 0; i < userArrObj.length; i++) {
+                if (userArrObj[i].email == emailVar && userArrObj[i].password == passwordVar) {
+                    loggedInUser = userArrObj[i];
+                    break;
+                }
+            }
+
+            if (loggedInUser) {
+                sessionStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+
+                window.location.href = "profile.html";
+            } else {
+                alert("Wrong credentials!");
+            }
+        }
+    </script>
+</body>
+</html>
